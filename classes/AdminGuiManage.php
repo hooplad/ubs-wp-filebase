@@ -252,7 +252,8 @@ jQuery('#wpfb-tools li').mouseenter(function(e) {
 			Includes the great file analyzer <a href="http://www.getid3.org/">getID3()</a> by James Heinrich.<br />
 			Tools Icons by <a href="http://www.icondeposit.com/">Matt Gentile</a>.
 			</p>
-			<?php if(current_user_can('edit_files')) { ?>
+                        
+			<?php /*BLOGS-, quick fix to disabling uninstalling plugin from site */ if(is_network_admin()) { ?>
 			<p><a href="<?php echo admin_url('plugins.php?wpfb-uninstall=1') ?>" class="button"><?php _e('Completely Uninstall WP-Filebase') ?></a></p>
 				<?php
 			}
